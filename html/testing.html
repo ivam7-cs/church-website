@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>St. George Church</title>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ================= HERO ================= */
+.hero {
+  height: 150vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("https://picsum.photos/1600/900") center/cover;
+  transform: scale(1.2);
+}
+
+.hero-content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.hero-buttons button {
+  margin: 10px;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: -80px;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  min-height: 100vh;
+  padding: 100px;
+}
+
+#section-2 {
+  background: #f4f4f4;
+}
+
+#section-3 {
+  background: #ddd;
+}
+
+#section-4 {
+  background: #eee;
+}
+
+/* EVENTS */
+#upcomingEvents {
+  display: flex;
+  gap: 20px;
+}
+
+.event-img {
+  width: 200px;
+  height: 150px;
+  background: gray;
+}
+
+/* FOOTER */
+footer {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <a href="#section-1">Home</a>
+  <a href="#section-2">About</a>
+  <a href="#section-3">Services</a>
+</div>
+
+<!-- HERO -->
+<section id="section-1" class="hero">
+
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-title">Welcome to St. George Serbian Orthodox Church!</h1>
+
+    <div class="hero-buttons">
+      <button>Button 1</button>
+      <button>Button 2</button>
+    </div>
+  </div>
+
+</section>
+
+<!-- SECTION 2 -->
+<section id="section-2" class="section">
+
+  <h1 class="fade-text">Welcome to St. George Serbian Orthodox Church!</h1>
+
+  <p class="fade-text">
+    Welcome to the Orthodox Serbian Church of Saint George the Great Martyr and Victorious...
+  </p>
+
+</section>
+
+<!-- SECTION 3 -->
+<section id="section-3" class="section">
+
+  <h1 class="fade-up">Sunday Services</h1>
+
+  <p class="fade-up">
+    Every Sunday at 10AM<br>
+    Coffee hours right after!
+  </p>
+
+</section>
+
+<!-- SECTION 4 -->
+<section id="section-4" class="section">
+
+  <div id="upcomingEvents">
+    <img class="event-img">
+    <img class="event-img">
+    <img class="event-img">
+  </div>
+
+</section>
+
+<footer>
+  Footer Content
+</footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+/* ================= HERO PARALLAX ================= */
+
+gsap.to(".hero-bg", {
+  y: 200,
+  scale: 1,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+/* TITLE PUSH OUT */
+gsap.to(".hero-title", {
+  y: -200,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+/* BUTTONS FADE */
+gsap.to(".hero-buttons", {
+  y: 100,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+/* ================= NAVBAR ================= */
+
+gsap.to(".navbar", {
+  y: 80,
+  scrollTrigger: {
+    trigger: "#section-2",
+    start: "top 80%",
+    toggleActions: "play none none reverse"
+  }
+});
+
+/* ================= SECTION 2 TEXT ================= */
+
+gsap.utils.toArray(".fade-text").forEach(el => {
+  gsap.from(el, {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    scrollTrigger: {
+      trigger: el,
+      start: "top 80%"
+    }
+  });
+});
+
+/* ================= SECTION 3 ================= */
+
+gsap.from(".fade-up", {
+  opacity: 0,
+  y: 80,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: "#section-3",
+    start: "top 80%"
+  }
+});
+
+/* ================= EVENTS ================= */
+
+gsap.from(".event-img", {
+  opacity: 0,
+  scale: 0.8,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: "#section-4",
+    start: "top 80%"
+  }
+});
+
+/* ================= FOOTER ================= */
+
+gsap.to("footer", {
+  opacity: 1,
+  y: -30,
+  scrollTrigger: {
+    trigger: "footer",
+    start: "top 90%"
+  }
+});
+</script>
+
+</body>
+</html>
