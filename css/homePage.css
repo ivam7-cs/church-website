@@ -1,0 +1,260 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/**** NAVIGATION ****/
+.navbar {
+    position: fixed;
+    top: -80px;
+    width: 100%;
+    background: #4B5021;
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+    color: #CCA653;
+    font-family: "Noto Serif";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.5px;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+
+
+/**** HOME PAGE ****/
+/* ================= HERO ================= */
+.hero {
+    height: 150vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url("../images/newChurch/1.jpg") center/cover;
+    transform: scale(1.2);
+}
+
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(31, 54, 62, 0.6);
+}
+
+.hero-title {
+    position: absolute;
+    right: 13px;
+    bottom: 120px;
+    font-size: 65px;
+    text-align: right;
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    color: #CCA653;
+    font-family: Kings;
+    letter-spacing: 5px;
+}
+
+.hero-buttons {
+    position: absolute;
+    right: 26px;
+    bottom: 43px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.hero-buttons button {
+    margin: 10px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    color: #4B5021;
+    background-color: rgba(162, 159, 83, 0.8);
+    font-family: "Noto Serif";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1.5px;
+}
+
+#welcome {
+    color: var(--zlatna, #CCA653);
+    font-family: Kings;
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 3.25px;
+    text-align: center;
+}
+
+p {
+    color: var(--zlatna, #CCA653);
+    font-family: "Noto Serif";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.75px;
+    margin-left: 93px;
+    margin-right: 424px;
+    margin-bottom: 175px;
+    margin-top: 122px;
+}
+
+#services {
+    background-color: #4B5021;
+    color: #CCA653;
+    display: flex;
+    flex-direction: row;
+}
+
+#services h1 {
+    color: var(--zlatna, #CCA653);
+    font-family: Kings;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 5px;
+    margin-left: 112px;
+    margin-right: 173px;
+    margin-top: 44px;
+}
+
+#services p {
+    color: #F6ECDC;
+    font-family: "Noto Serif";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.75px;
+    margin-right: 125px;
+    margin-top: 130px;
+}
+
+#section-4 h1 {
+    color: var(--zlatna, #CCA653);
+    font-family: Kings;
+    font-size: 130px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 6.5px;
+    margin-top: 566px;
+    margin-left: 71px;
+    margin-right: 385px;
+    margin-bottom: 104px;
+}
+
+/* EVENTS */
+#upcomingEvents {
+    display: flex;
+    gap: 20px;
+    margin-left: 100px;
+}
+
+.event-img {
+    width: 382px;
+    height: 542px;
+}
+
+.section-image {
+    position: fixed;
+    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url("../images/newChurch/2.jpg") center/cover no-repeat;
+    transform: scale(1.1);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.section-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(31, 54, 62, 0.6);
+}
+
+footer {
+    background-color: #4B5021;
+}
+
+
+#sentence {
+    color: var(--pozadina, #F6ECDC);
+    font-family: "Noto Serif";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.25px;
+    position: relative;
+    top: 104px;
+    left: 195px;
+}
+
+#address {
+    color: var(--pozadina, #F6ECDC);
+    text-align: right;
+    font-family: "Noto Serif";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.75px;
+    
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+
+    background: #4B5021;
+    color: #F6ECDC;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+
+    z-index: 9999;
+
+    transition: 0.3s ease;
+}
+
+.back-to-top:hover {
+    transform: scale(1.1);
+    background: #3b3f1a;
+}
