@@ -84,7 +84,7 @@
         .hero {
             height: 150vh;
             position: relative;
-            overflow: hidden;
+            overflow: clip;
         }
 
         .hero-bg {
@@ -394,7 +394,7 @@
         }
 
         #sentence {
-            color: #F6ECDC;
+            color: var(--background);
             font-family: 'Noto Serif', serif;
             opacity: 0.85;
             max-width: 460px;
@@ -470,7 +470,7 @@
         }
 
         #address {
-            color: rgba(246, 236, 220, 0.45);
+            color: var(--background);
             font-family: 'Noto Serif', serif;
             font-size: 11px;
             letter-spacing: 3.52px;
