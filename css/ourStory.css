@@ -100,7 +100,7 @@ body {
 
 .hero-lable {
     font-family: 'Noto Serif', sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
@@ -199,15 +199,16 @@ body {
 
 /* ── SECTION 2: MEET THE TEAM ── */
 #meet-team {
-    background: var(--cream);
+    background: var(--background);
     padding: 80px 80px 60px;
+    margin-bottom: 300px;
 }
 
 #meet-team h2 {
     font-family: 'Kings', serif;
     font-size: clamp(38px, 4vw, 58px);
     font-weight: 400;
-    color: var(--olive);
+    color: var(--darkgreen);
     letter-spacing: 3px;
     margin-bottom: 3rem;
 }
@@ -226,8 +227,8 @@ body {
 }
 
 .team-member img {
-    width: 160px;
-    height: 200px;
+    width: 290px;
+    height: 350px;
     object-fit: cover;
     object-position: top;
     filter: grayscale(20%);
@@ -275,7 +276,7 @@ body {
     font-family: 'Kings', serif;
     font-size: clamp(40px, 4.5vw, 68px);
     font-weight: 400;
-    color: var(--olive);
+    color: var(--darkgreen);
     letter-spacing: 3px;
     line-height: 1.05;
 }
@@ -338,7 +339,7 @@ body {
 
 /* ── OLIVE BAND (Church President / KSS) ── */
 .olive-band {
-    background: var(--olive);
+    background: var(--darkgreen);
     padding: 80px;
 }
 
@@ -375,7 +376,7 @@ body {
     font-family: 'Kings', serif;
     font-size: clamp(28px, 3.5vw, 48px);
     font-weight: 400;
-    color: var(--darkgreen);
+    color: var(--gold);
     letter-spacing: 3px;
     line-height: 1.3;
 }
