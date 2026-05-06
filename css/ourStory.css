@@ -128,6 +128,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
+    margin-bottom: 100px;
 }
 
 .welcome-text {
@@ -176,11 +177,11 @@ body {
 }
 
 .section1-quote p {
-    font-style: italic;
     font-family: Noto Serif, serif;
     font-weight: bold;
+    font-style: italic;
     font-size: 25px;
-    color: var(--darkgreen);
+    color: var(--gold);
 }
 
 
@@ -199,14 +200,15 @@ body {
 
 /* ── SECTION 2: MEET THE TEAM ── */
 #meet-team {
-    background: var(--background);
+    background: #ece4d0;
     padding: 80px 80px 60px;
     margin-bottom: 300px;
+
 }
 
 #meet-team h2 {
     font-family: 'Kings', serif;
-    font-size: clamp(38px, 4vw, 58px);
+    font-size: 68px;
     font-weight: 400;
     color: var(--darkgreen);
     letter-spacing: 3px;
@@ -226,32 +228,72 @@ body {
     gap: 0.75rem;
 }
 
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 360px;
+    width: 300px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: var(--darkgreen);
+}
+
+.container:hover .overlay {
+    opacity: 0.8;
+}
+
+.overlay p {
+    color: var(--background);
+    font-family: 'Noto Serif', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .team-member img {
-    width: 290px;
-    height: 350px;
+    width: 300px;
+    height: 360px;
     object-fit: cover;
     object-position: top;
-    filter: grayscale(20%);
-    transition: filter 0.3s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .team-member img:hover {
-    filter: grayscale(0%);
+    transform: shadow(0 8px 16px 0 rgba(0, 0, 0, 0.3), 0 12px 40px 0 rgba(0, 0, 0, 0.25));
+    transition: transform 0.3s ease;
 }
 
 .team-member-name {
     font-family: 'Noto Serif', sans-serif;
-    font-size: 11px;
+    font-size: 15px;
     letter-spacing: 0.15em;
-    text-transform: uppercase;
+    color: var(--darkgreen);
+    text-align: center;
+    font-style: italic;
+}
+
+.team-member-role {
+    font-family: 'Noto Serif', serif;
+    font-size: 15px;
     color: var(--gold);
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
 }
 
 /* ── SECTION 3: OUR PRIEST ── */
 #our-priest {
     background: var(--background);
-    padding: 0 80px 80px;
+    padding: 80px 80px 80px;
 }
 
 .person-block {
@@ -337,42 +379,42 @@ body {
     aspect-ratio: 16/9;
 }
 
-/* ── OLIVE BAND (Church President / KSS) ── */
-.olive-band {
+/* ── Church President ── */
+.green-section {
     background: var(--darkgreen);
     padding: 80px;
 }
 
-.olive-band .person-header .role-label {
+.green-section .person-header .role-label {
     color: var(--gold);
 }
 
-.olive-band .person-header h2 {
+.green-section .person-header h2 {
     color: var(--gold);
 }
 
-.olive-band .person-header h3 {
+.green-section .person-header h3 {
     color: var(--background);
 }
 
-.olive-band .person-text p {
+.green-section .person-text p {
     color: var(--background);
 }
 
-.olive-band .person-quote {
+.green-section .person-quote {
     border-left-color: var(--gold);
 }
 
-.olive-band .person-quote p {
+.green-section .person-quote p {
     color: var(--background);
 }
 
-.olive-band-quote {
+.green-section-quote {
     text-align: center;
-    padding: 40px 0 0;
+    padding: 70px 0 0;
 }
 
-.olive-band-quote p {
+.green-section-quote p {
     font-family: 'Kings', serif;
     font-size: clamp(28px, 3.5vw, 48px);
     font-weight: 400;
@@ -385,11 +427,12 @@ body {
 #meet-parish {
     background: var(--background);
     padding: 80px;
+    margin-bottom: 100px;
 }
 
 #meet-parish h2 {
     font-family: 'Kings', serif;
-    font-size: clamp(40px, 4.5vw, 68px);
+    font-size: 68px;
     font-weight: 400;
     color: var(--darkgreen);
     letter-spacing: 3px;
@@ -398,27 +441,18 @@ body {
 
 .parish-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
     margin-bottom: 3rem;
+    margin-right: 300px;
 }
 
 .parish-grid img {
-    width: 100%;
-    aspect-ratio: 4/3;
+    width: 400px;
+    height: 500px;
     object-fit: cover;
     display: block;
     transition: transform 0.4s ease;
-}
-
-.parish-grid img:hover {
-    transform: scale(1.02);
-}
-
-.parish-grid .tall {
-    grid-row: span 2;
-    aspect-ratio: unset;
-    height: 100%;
 }
 
 .meet-iva-btn {
@@ -454,11 +488,14 @@ footer {
 
 #sentence {
     color: var(--background);
-    font-family: 'Noto Serif', Georgia, serif;
-    font-size: clamp(20px, 2.2vw, 28px);
-    font-style: italic;
-    line-height: 1.6;
+    font-family: 'Noto Serif', serif;
     opacity: 0.85;
+    max-width: 460px;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.25px;
 }
 
 .footer-socials {
