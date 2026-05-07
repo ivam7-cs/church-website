@@ -1,0 +1,179 @@
+:root {
+    --darkgreen: #4B5021;
+    --gold: #CCA653;
+    --background: #F6ECDC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    font-family: "Noto Serif", serif;
+    overflow-x: hidden;
+}
+
+/* NAV (same as your site) */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 68px;
+    background: var(--darkgreen);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    z-index: 1000;
+}
+
+.nav-links a {
+    color: var(--background);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+}
+
+.nav-links a.active {
+    color: var(--gold);
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    margin-top: 68px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url("../images/ourStory/ivaHero.jpg") center/cover;
+    transform: scale(1.1);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 80px;
+    left: 80px;
+    color: var(--background);
+}
+
+.hero-label {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+}
+
+.hero h1 {
+    font-family: "Kings", serif;
+    font-size: 90px;
+}
+
+.hero p {
+    opacity: 0.8;
+}
+
+/* STORY LAYOUT */
+.story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 400vh;
+}
+
+/* LEFT TEXT */
+.story-text {
+    padding: 120px 90px;
+    position: relative;
+}
+
+.chapter {
+    margin-bottom: 200px;
+    opacity: 0.4;
+    transition: 0.5s ease;
+}
+
+.chapter.active {
+    opacity: 1;
+}
+
+.chapter span {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+}
+
+.chapter h2 {
+    font-family: "Kings", serif;
+    font-size: 52px;
+    color: var(--darkgreen);
+    margin: 10px 0;
+}
+
+.chapter p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--darkgreen);
+}
+
+/* RIGHT VISUAL */
+.story-visual {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background: #000;
+}
+
+.scene {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 0.8s ease;
+}
+
+.scene.active {
+    opacity: 1;
+}
+
+.scene img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PROGRESS BAR */
+.progress {
+    position: fixed;
+    right: 30px;
+    top: 30%;
+    width: 3px;
+    height: 200px;
+    background: rgba(204,166,83,0.2);
+}
+
+.bar {
+    width: 100%;
+    height: 0%;
+    background: var(--gold);
+}
+
+/* FOOTER */
+footer {
+    background: var(--darkgreen);
+    text-align: center;
+    padding: 60px;
+    color: var(--gold);
+    font-family: "Kings", serif;
+    font-size: 28px;
+}

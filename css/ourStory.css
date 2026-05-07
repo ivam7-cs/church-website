@@ -454,24 +454,39 @@ body {
     display: block;
     transition: transform 0.4s ease;
 }
-
-.meet-iva-btn {
-    display: inline-block;
-    padding: 13px 32px;
-    border: 1.5px solid var(--darkgreen);
-    color: var(--darkgreen);
-    text-decoration: none;
-    font-family: 'Noto Serif', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    transition: all 0.25s ease;
+.parish-grid img:hover {
+    transform: scale(1.05);
 }
 
-.meet-iva-btn:hover {
-    background: var(--darkgreen);
+.overlay-parish {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 500px;
+    width: 400px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: var(--darkgreen);
+}
+
+.container-parish:hover .overlay-parish {
+    opacity: 0.8;
+}
+
+.overlay-parish p {
     color: var(--background);
+    font-family: 'Noto Serif', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* ── FOOTER ── */
@@ -576,69 +591,3 @@ footer {
     border-color: var(--gold);
 }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-    .navbar {
-        padding: 0 1.5rem;
-    }
-
-    .nav-links {
-        gap: 1.5rem;
-    }
-
-    .navbar a {
-        font-size: 10px;
-    }
-
-    #welcome-section {
-        grid-template-columns: 1fr;
-    }
-
-    .welcome-images {
-        display: none;
-    }
-
-    .welcome-text {
-        padding: 60px 40px;
-    }
-
-    #meet-team {
-        padding: 60px 40px;
-    }
-
-    .team-photos {
-        flex-wrap: wrap;
-        gap: 24px;
-    }
-
-    #our-priest {
-        padding: 0 40px 60px;
-    }
-
-    .person-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .olive-band {
-        padding: 60px 40px;
-    }
-
-    #meet-parish {
-        padding: 60px 40px;
-    }
-
-    .parish-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .footer-top {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 50px 40px 40px;
-    }
-
-    .footer-bottom {
-        padding: 24px 40px;
-    }
-}
