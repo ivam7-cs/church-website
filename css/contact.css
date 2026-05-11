@@ -70,17 +70,17 @@ body {
 /* HERO */
 
 .contact-hero {
-    height: 58vh;
-    margin-top: 78px;
+    height: 70vh;
+    margin-top: 68px;
     position: relative;
     overflow: hidden;
 }
 
 .hero-bg {
     position: absolute;
-    inset: -12% 0;
-    background: url("../images/contact/contactHero.jpg") center/cover no-repeat;
-    transform: scale(1.14);
+    inset: -15% 0;
+    background: url("../images/ourStory/church2.jpg") center/cover no-repeat;
+    transform: scale(1.15);
 }
 
 .hero-overlay {
