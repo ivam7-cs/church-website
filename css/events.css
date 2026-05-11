@@ -26,36 +26,44 @@ body {
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    height: 68px;
     background: var(--darkgreen);
+    padding: 0 3rem;
+    height: 68px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 3rem;
     z-index: 1000;
 }
 
 .nav-logo-img {
-    height: 48px;
+    height: 44px;
+    width: auto;
+    filter: brightness(0) invert(1) sepia(0.15);
 }
 
 .nav-links {
     display: flex;
-    gap: 2.4rem;
+    gap: 2.8rem;
 }
 
-.nav-links a {
+.navbar a {
     color: var(--background);
     text-decoration: none;
+    font-family: 'Noto Serif', sans-serif;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
+    transition: color 0.25s;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.navbar a:hover {
+    color: var(--gold);
+}
+
+.navbar a.active {
     color: var(--gold);
 }
 
@@ -71,7 +79,7 @@ body {
 .hero-bg {
     position: absolute;
     inset: -12% 0;
-    background: url("../images/events/hero.jpg") center/cover no-repeat;
+    background: url("../images/events/events.JPEG") center/cover no-repeat;
     transform: scale(1.15);
 }
 

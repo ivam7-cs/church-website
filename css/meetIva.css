@@ -41,13 +41,14 @@ body {
 }
 
 .nav-logo-img {
-    height: 52px;
-    display: block;
+    height: 44px;
+    display: auto;
+    filter: brightness(0) invert(1) sepia(0.15);
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.8rem;
 }
 
 .nav-links a {
