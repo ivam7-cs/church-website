@@ -317,8 +317,6 @@ body {
     fill: #2d7fbd;
 }
 
-/* 171,035 / 1,500,000 = about 11.4%.
-   SVG viewBox height is 360, so fill rises about 41px. */
 
 .logo-outline,
 .logo-line,
