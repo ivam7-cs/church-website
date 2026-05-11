@@ -1,0 +1,604 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --darkgreen: #4B5021;
+    --gold: #CCA653;
+    --background: #F6ECDC;
+    --cream2: #eadfcf;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Noto Serif", serif;
+    background: var(--background);
+    color: var(--darkgreen);
+    overflow-x: hidden;
+}
+
+/* NAV */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--darkgreen);
+    padding: 0 3rem;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.nav-logo-img {
+    height: 44px;
+    width: auto;
+    filter: brightness(0) invert(1) sepia(0.15);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.8rem;
+}
+
+.navbar a {
+    color: var(--background);
+    text-decoration: none;
+    font-family: 'Noto Serif', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: color 0.25s;
+}
+
+.navbar a:hover {
+    color: var(--gold);
+}
+
+.navbar a.active {
+    color: var(--gold);
+}
+
+/* FIXED PARALLAX BG */
+
+.page-bg {
+    position: fixed;
+    inset: 0;
+    background: url("../images/newChurch/1.jpg") center/cover no-repeat;
+    transform: scale(1.12);
+    opacity: 0.18;
+    z-index: -2;
+}
+
+.page-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(246, 236, 220, 0.65);
+}
+
+/* HERO */
+
+.hero {
+    height: 115vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: -12% 0;
+    background: url("../images/newChurch/1.jpg") center/cover no-repeat;
+    transform: scale(1.16);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to top, rgba(31, 35, 12, 0.82), transparent 58%),
+        linear-gradient(to right, rgba(31, 35, 12, 0.55), transparent);
+}
+
+.hero-content {
+    position: absolute;
+    left: 9vw;
+    bottom: 16vh;
+    z-index: 2;
+    max-width: 780px;
+}
+
+.hero-small {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-family: "Kings", cursive;
+    color: var(--background);
+    font-size: clamp(68px, 10vw, 140px);
+    font-weight: 400;
+    line-height: 0.95;
+    margin: 18px 0;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero p {
+    color: rgba(246, 236, 220, 0.9);
+    font-size: 22px;
+    line-height: 1.6;
+    max-width: 580px;
+    margin-bottom: 30px;
+}
+
+.hero-btn,
+.donate-btn {
+    display: inline-block;
+    padding: 13px 30px;
+    background: var(--gold);
+    color: var(--darkgreen);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover,
+.donate-btn:hover {
+    background: var(--background);
+}
+
+/* INTRO */
+
+.intro {
+    background: var(--background);
+    padding: 150px 8vw 120px;
+}
+
+.intro h2 {
+    font-family: "Kings", cursive;
+    color: var(--gold);
+    font-size: clamp(52px, 8vw, 105px);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.intro h3 {
+    text-align: center;
+    color: var(--darkgreen);
+    font-size: 34px;
+    letter-spacing: 0.06em;
+    margin-bottom: 90px;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 90px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.intro-text p {
+    font-size: 18px;
+    line-height: 1.75;
+    margin-bottom: 24px;
+}
+
+.poster-card {
+    background: var(--darkgreen);
+    padding: 18px;
+    box-shadow: 0 28px 70px rgba(75, 80, 33, 0.25);
+}
+
+.poster-card img {
+    width: 100%;
+    display: block;
+}
+
+/* MISSION */
+
+.mission {
+    background: var(--darkgreen);
+    padding: 140px 8vw;
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 85px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.mission-img {
+    height: 450px;
+    overflow: hidden;
+}
+
+.mission-img img {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    display: block;
+}
+
+.mission-text span {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.mission-text p {
+    color: var(--background);
+    font-size: 21px;
+    line-height: 1.75;
+    margin-top: 22px;
+}
+
+/* DONATION */
+
+.donation {
+    background: var(--background);
+    padding: 150px 8vw;
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.donation-copy span {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+}
+
+.donation-copy h2 {
+    font-family: "Kings", cursive;
+    color: var(--darkgreen);
+    font-size: clamp(54px, 7vw, 100px);
+    font-weight: 400;
+    line-height: 1;
+    margin: 22px 0;
+}
+
+.donation-copy p {
+    font-size: 18px;
+    line-height: 1.75;
+    max-width: 600px;
+    margin-bottom: 32px;
+}
+
+/* LOGO FILL */
+
+.goal-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.38);
+    padding: 40px;
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 24px 80px rgba(75, 80, 33, 0.16);
+}
+
+.logo-fill {
+    width: 100%;
+    max-width: 360px;
+}
+
+.logo-fill svg {
+    width: 100%;
+    display: block;
+}
+
+.logo-empty {
+    fill: rgba(75, 80, 33, 0.18);
+}
+
+.logo-progress {
+    fill: #2d7fbd;
+}
+
+/* 171,035 / 1,500,000 = about 11.4%.
+   SVG viewBox height is 360, so fill rises about 41px. */
+
+.logo-outline,
+.logo-line,
+.cross {
+    fill: none;
+    stroke: rgba(75, 80, 33, 0.35);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.cross {
+    stroke: var(--gold);
+}
+
+.goal-text {
+    position: absolute;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.goal-text p {
+    font-size: 14px;
+}
+
+.goal-text h3 {
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.goal-text span {
+    font-size: 12px;
+}
+
+/* PROJECT */
+
+.project {
+    background: var(--background);
+    padding: 80px 8vw 150px;
+    text-align: center;
+}
+
+.project h2 {
+    font-family: "Kings", cursive;
+    color: var(--darkgreen);
+    font-size: clamp(64px, 9vw, 130px);
+    font-weight: 400;
+    margin-bottom: 90px;
+}
+
+.project-image {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(75, 80, 33, 0.2);
+}
+
+.project-image img {
+    width: 100%;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.project-image:hover img {
+    transform: scale(1.04);
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--darkgreen);
+    color: var(--background);
+    padding: 70px 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 18px;
+}
+
+.footer-socials a {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+footer p {
+    text-align: right;
+    font-size: 21px;
+    line-height: 1.4;
+}
+
+/* BACK TO TOP */
+
+.back-to-top {
+    position: fixed;
+    right: 34px;
+    bottom: 34px;
+    width: 48px;
+    height: 48px;
+    background: var(--darkgreen);
+    color: var(--gold);
+    border: 1px solid rgba(204, 166, 83, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: 0.3s ease;
+    z-index: 900;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .intro-grid,
+    .mission,
+    .donation {
+        grid-template-columns: 1fr;
+    }
+
+    .mission {
+        gap: 45px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    footer p {
+        text-align: left;
+    }
+}
+
+/* SLIDESHOW */
+
+.slideshow {
+    position: relative;
+    max-width: 920px;
+    height: 560px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(75, 80, 33, 0.2);
+    background: var(--darkgreen);
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 0.6s ease, transform 0.8s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(204, 166, 83, 0.6);
+    background: rgba(75, 80, 33, 0.75);
+    color: var(--gold);
+    font-size: 42px;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.slide-arrow:hover {
+    background: var(--gold);
+    color: var(--darkgreen);
+}
+
+.prev {
+    left: 22px;
+}
+
+.next {
+    right: 22px;
+}
+
+.slide-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(246, 236, 220, 0.55);
+    cursor: pointer;
+}
+
+.dot.active {
+    background: var(--gold);
+}
+
+/* MAKE LOGO FILL MORE VISIBLE */
+
+.logo-empty {
+    fill: rgba(75, 80, 33, 0.18);
+}
+
+.logo-progress {
+    fill: var(--gold);
+}
+
+.logo-outline,
+.logo-line,
+.cross {
+    fill: none;
+    stroke: var(--darkgreen);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.cross {
+    stroke: var(--gold);
+}
+
+.goal-card {
+    overflow: hidden;
+}
+
+@media (max-width: 700px) {
+    .slideshow {
+        height: 360px;
+    }
+
+    .slide-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 34px;
+    }
+}
