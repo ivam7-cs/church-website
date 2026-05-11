@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Iva - St. George Serbian Orthodox Church</title>
+
+    <link rel="stylesheet" href="../css/meetIva.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kings&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-logo">
+            <a href="home.html">
+                <img src="../images/Church-Logo-1.png" class="nav-logo-img" alt="St. George Church Logo">
+            </a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="home.html">HOME</a>
+            <a href="ourStory.html">OUR STORY</a>
+            <a class="active" href="meetIva.html">MEET IVA</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <span class="eyebrow">Parish Member Story</span>
+            <h1>Meet Iva</h1>
+            <p>A story of faith, service, heritage, and community.</p>
+        </div>
+
+        <div class="scroll-hint">Scroll to begin</div>
+    </section>
+
+    <section class="story">
+
+        <div class="story-text">
+
+            <article class="chapter active" data-index="0">
+                <span class="chapter-number">01</span>
+                <h2>Rooted in Faith</h2>
+                <p>
+                    From an early age, Iva was immersed in Orthodox tradition,
+                    where faith was not just practiced, but lived daily through
+                    family, worship, and parish life.
+                </p>
+            </article>
+
+            <article class="chapter" data-index="1">
+                <span class="chapter-number">02</span>
+                <h2>Growing Involvement</h2>
+                <p>
+                    As she matured, her connection to the church deepened through
+                    service, participation, and a growing sense of responsibility
+                    to her community.
+                </p>
+            </article>
+
+            <article class="chapter" data-index="2">
+                <span class="chapter-number">03</span>
+                <h2>Living Service</h2>
+                <p>
+                    Iva dedicates her time to volunteering, helping organize events,
+                    and supporting parish activities that bring people together.
+                </p>
+            </article>
+
+            <article class="chapter" data-index="3">
+                <span class="chapter-number">04</span>
+                <h2>Continuing Legacy</h2>
+                <p>
+                    Today, she focuses on preserving tradition while encouraging
+                    younger generations to stay connected to faith and heritage.
+                </p>
+            </article>
+
+        </div>
+
+        <div class="story-visual">
+            <div class="image-frame">
+                <div class="scene active">
+                    <img src="../images/meetIva/iva1.png" alt="Iva story image one">
+                </div>
+
+                <div class="scene">
+                    <img src="../images/meetIva/iva2.png" alt="Iva story image two">
+                </div>
+
+                <div class="scene">
+                    <img src="../images/meetIva/iva3.png" alt="Iva story image three">
+                </div>
+
+                <div class="scene">
+                    <img src="../images/meetIva/iva4.png" alt="Iva story image four">
+                </div>
+
+                <div class="scene">
+                    <img src="../images/meetIva/iva5.png" alt="Iva story image five">
+                </div>
+
+                <div class="scene">
+                    <img src="../images/meetIva/iva6.png" alt="Iva story image six">
+                </div>
+
+                <div class="scene">
+                    <img src="../images/meetIva/iva7.png" alt="Iva story image seven">
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="progress">
+        <div class="bar"></div>
+    </div>
+
+    <footer>
+        <p>“Faith is not inherited — it is lived.”</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from(".hero-content", {
+            opacity: 0,
+            y: 60,
+            duration: 1.2,
+            ease: "power3.out"
+        });
+
+        gsap.to(".hero-bg", {
+            scale: 1,
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        const chapters = document.querySelectorAll(".chapter");
+        const scenes = document.querySelectorAll(".scene");
+        const progressBar = document.querySelector(".bar");
+
+        function activate(index) {
+            chapters.forEach(chapter => chapter.classList.remove("active"));
+            scenes.forEach(scene => scene.classList.remove("active"));
+
+            chapters[index].classList.add("active");
+            scenes[index].classList.add("active");
+
+            progressBar.style.height = ((index + 1) / chapters.length) * 100 + "%";
+
+            gsap.fromTo(
+                scenes[index].querySelector("img"),
+                { scale: 1.08, opacity: 0.6 },
+                { scale: 1, opacity: 1, duration: 1.1, ease: "power3.out" }
+            );
+        }
+
+        chapters.forEach((chapter, index) => {
+            ScrollTrigger.create({
+                trigger: chapter,
+                start: "top 55%",
+                end: "bottom 45%",
+                onEnter: () => activate(index),
+                onEnterBack: () => activate(index)
+            });
+        });
+    </script>
+
+</body>
+
+</html>
