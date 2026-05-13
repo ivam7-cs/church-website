@@ -18,9 +18,6 @@
 
 <body>
 
-    <!-- BACKGROUND PARALLAX IMAGE -->
-    <div class="section-image"></div>
-
     <!-- NAV BAR -->
     <div class="navbar">
         <div class="nav-logo">
@@ -60,6 +57,10 @@
                 and Victorious. Truly welcome are those for whom our protector and patron St. George the Great Martyr
                 and Victorious — the champion and witness of the truth — is the defender of faith and the victor over
                 the enemies of God and the People of God.</p>
+        </div>
+        <div class="home-logo-reveal fade-text">
+            <img src="../images/Church-Logo-1.png" alt="">
+            <span class="logo-name">St. George Serbian<br>Orthodox Church</span>
         </div>
     </section>
 
@@ -150,7 +151,7 @@
 
         /* ── HERO PARALLAX ── */
         gsap.to(".hero-bg", {
-            y: 220, ease: "none",
+            y: 140, ease: "none",
             scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
         });
 
@@ -199,11 +200,6 @@
 
 
         /* ── BACKGROUND PARALLAX ── */
-        gsap.to(".section-image", {
-            y: 280, ease: "none",
-            scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: true }
-        });
-
         /* ── FOOTER ── */
         gsap.from("footer", {
             opacity: 0, y: 40, duration: 1.2, ease: "power3.out",

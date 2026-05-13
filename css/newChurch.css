@@ -101,6 +101,7 @@ body {
 
 .hero-btn,
 .donate-btn {
+    position: relative;
     display: inline-block;
     padding: 13px 30px;
     background: var(--gold);
@@ -114,9 +115,97 @@ body {
     transition: 0.3s ease;
 }
 
+.donate-btn {
+    overflow: hidden;
+    isolation: isolate;
+    background: linear-gradient(110deg, var(--gold), #f0d88d, var(--gold), #a9822d);
+    background-size: 260% 100%;
+    box-shadow: 0 18px 34px rgba(75, 80, 33, 0.18), 0 0 0 0 rgba(204, 166, 83, 0.45);
+    animation: donateGlow 1.9s ease-in-out infinite, donateGradient 3.5s linear infinite;
+}
+
+.donate-btn::before {
+    content: "";
+    position: absolute;
+    inset: -7px;
+    border: 2px solid rgba(204, 166, 83, 0.5);
+    border-radius: inherit;
+    opacity: 0;
+    animation: donateRing 1.9s ease-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.donate-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 22% 35%, rgba(255, 255, 255, 0.9) 0 2px, transparent 3px),
+        radial-gradient(circle at 72% 62%, rgba(255, 255, 255, 0.85) 0 1.5px, transparent 2.5px);
+    opacity: 0;
+    animation: donateSparkle 1.9s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
 .hero-btn:hover,
 .donate-btn:hover {
     background: var(--background);
+}
+
+.donate-btn:hover {
+    animation-play-state: paused;
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 22px 42px rgba(75, 80, 33, 0.26);
+}
+
+@keyframes donateGlow {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 18px 34px rgba(75, 80, 33, 0.18), 0 0 0 0 rgba(204, 166, 83, 0.45);
+    }
+
+    50% {
+        transform: translateY(-4px) scale(1.035);
+        box-shadow: 0 24px 42px rgba(75, 80, 33, 0.22), 0 0 0 10px rgba(204, 166, 83, 0);
+    }
+}
+
+@keyframes donateGradient {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 260% 50%;
+    }
+}
+
+@keyframes donateRing {
+    0% {
+        opacity: 0.7;
+        transform: scale(0.92);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.24);
+    }
+}
+
+@keyframes donateSparkle {
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    45% {
+        opacity: 1;
+        transform: scale(1.04);
+    }
 }
 
 /* INTRO */
@@ -158,11 +247,7 @@ body {
     margin-bottom: 24px;
 }
 
-.poster-card {
-    background: var(--darkgreen);
-    padding: 18px;
-    box-shadow: 0 28px 70px rgba(75, 80, 33, 0.25);
-}
+
 
 .poster-card img {
     width: 100%;
@@ -269,6 +354,7 @@ body {
     text-align: center;
     color: white;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
 }
 
 .goal-text p {
@@ -326,6 +412,27 @@ body {
     background: var(--darkgreen);
 }
 
+.slideshow::before,
+.slideshow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 22%;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.slideshow::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(31, 35, 12, 0.5), transparent);
+}
+
+.slideshow::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(31, 35, 12, 0.5), transparent);
+}
+
 .slide {
     position: absolute;
     inset: 0;
@@ -351,28 +458,40 @@ body {
     top: 50%;
     transform: translateY(-50%);
     z-index: 5;
-    width: 52px;
-    height: 52px;
-    border: 1px solid rgba(204, 166, 83, 0.6);
-    background: rgba(75, 80, 33, 0.75);
+    width: 68px;
+    height: 96px;
+    border: 0;
+    background: transparent;
     color: var(--gold);
-    font-size: 42px;
+    font-family: "Kings", cursive;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 96px;
+    font-weight: 900;
     line-height: 1;
     cursor: pointer;
-    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-text-stroke: 2px rgba(31, 35, 12, 0.88);
+    text-shadow: 0 4px 0 rgba(31, 35, 12, 0.9), 0 12px 28px rgba(31, 35, 12, 0.75);
+    transition: transform 0.25s ease, color 0.25s ease, text-shadow 0.25s ease, -webkit-text-stroke-color 0.25s ease;
 }
 
 .slide-arrow:hover {
-    background: var(--gold);
-    color: var(--darkgreen);
+    color: var(--gold);
+    transform: translateY(-50%) scale(1.16);
+    -webkit-text-stroke-color: var(--darkgreen);
+    text-shadow: 0 4px 0 rgba(31, 35, 12, 0.95), 0 0 26px rgba(204, 166, 83, 0.95);
 }
 
 .prev {
-    left: 22px;
+    left: 28px;
+    padding-right: 4px;
 }
 
 .next {
-    right: 22px;
+    right: 28px;
+    padding-left: 4px;
 }
 
 .slide-dots {
@@ -408,12 +527,17 @@ body {
 
 .logo-outline,
 .logo-line,
+.logo-window,
 .cross {
     fill: none;
     stroke: var(--darkgreen);
-    stroke-width: 5;
+    stroke-width: 5.5;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+.logo-window {
+    stroke-width: 7;
 }
 
 .cross {
@@ -426,8 +550,9 @@ body {
     }
 
     .slide-arrow {
-        width: 42px;
-        height: 42px;
-        font-size: 34px;
+        width: 48px;
+        height: 68px;
+        font-size: 68px;
+        -webkit-text-stroke-width: 1.5px;
     }
 }

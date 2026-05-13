@@ -69,7 +69,7 @@
             </div>
 
             <div class="poster-card fade-up">
-                <img src="../images/newChurch/poster.png" alt="New Church Fundraising Poster">
+                <img src="../images/newChurch/kids.png" alt="New Church Fundraising Poster">
             </div>
         </div>
     </section>
@@ -77,7 +77,7 @@
     <!-- GREEN STORY SECTION -->
     <section class="mission">
         <div class="mission-img parallax-img">
-            <img src="../images/newChurch/current-building.jpg" alt="Current church building">
+            <img src="../images/ourStory/church1.jpg" alt="Current church building">
         </div>
 
         <div class="mission-text fade-up">
@@ -104,27 +104,29 @@
 
         <div class="goal-card fade-up">
             <div class="logo-fill">
-                <svg viewBox="0 0 300 360">
+                <svg viewBox="0 0 320 420" aria-label="New church fundraising progress">
                     <defs>
                         <clipPath id="churchClip">
-                            <path d="M150 20 C120 70 70 115 55 200 L55 310 H245 V200 C230 115 180 70 150 20 Z" />
-                            <rect x="90" y="245" width="38" height="65" rx="19" />
-                            <rect x="131" y="225" width="38" height="85" rx="19" />
-                            <rect x="172" y="245" width="38" height="65" rx="19" />
+                            <path d="M160 28 C112 44 82 86 82 140 C82 166 92 189 110 207 L110 248 L66 248 L66 224 L24 238 L24 386 L296 386 L296 238 L254 224 L254 248 L210 248 L210 207 C228 189 238 166 238 140 C238 86 208 44 160 28 Z" />
+                            <path d="M78 386 V316 C78 269 112 238 160 238 C208 238 242 269 242 316 V386 Z" />
+                            <path d="M116 386 V334 C116 306 134 288 160 288 C186 288 204 306 204 334 V386 Z" />
                         </clipPath>
                     </defs>
 
                     <g clip-path="url(#churchClip)">
-                        <rect class="logo-empty" x="0" y="0" width="300" height="360"></rect>
-                        <rect class="logo-progress" x="0" y="360" width="300" height="360"></rect>
+                        <rect class="logo-empty" x="0" y="0" width="320" height="420"></rect>
+                        <rect class="logo-progress" x="0" y="420" width="320" height="420"></rect>
                     </g>
 
-                    <path class="logo-outline"
-                        d="M150 20 C120 70 70 115 55 200 L55 310 H245 V200 C230 115 180 70 150 20 Z" />
-                    <path class="logo-line" d="M90 310 V264 C90 254 98 245 109 245 C120 245 128 254 128 264 V310" />
-                    <path class="logo-line" d="M131 310 V244 C131 233 139 225 150 225 C161 225 169 233 169 244 V310" />
-                    <path class="logo-line" d="M172 310 V264 C172 254 180 245 191 245 C202 245 210 254 210 264 V310" />
-                    <path class="cross" d="M150 5 V45 M132 23 H168" />
+                    <path class="logo-outline" d="M24 386 V238 L66 224 V248 H110 V207 C92 189 82 166 82 140 C82 86 112 44 160 28 C208 44 238 86 238 140 C238 166 228 189 210 207 V248 H254 V224 L296 238 V386 Z" />
+                    <path class="logo-line" d="M82 140 C110 114 210 114 238 140" />
+                    <path class="logo-line" d="M96 172 C126 156 194 156 224 172" />
+                    <path class="logo-line" d="M78 386 V316 C78 269 112 238 160 238 C208 238 242 269 242 316 V386" />
+                    <path class="logo-line" d="M116 386 V334 C116 306 134 288 160 288 C186 288 204 306 204 334 V386" />
+                    <path class="logo-line" d="M134 386 V338 H186 V386" />
+                    <path class="logo-line" d="M54 386 V292 M266 386 V292 M100 248 V218 M220 248 V218" />
+                    <path class="logo-window" d="M58 310 V286 M58 358 V334 M262 310 V286 M262 358 V334 M132 226 V204 M188 226 V204" />
+                    <path class="cross" d="M160 6 V48 M140 25 H180 M148 14 H172" />
                 </svg>
             </div>
 
@@ -159,10 +161,20 @@
                 <img src="../images/newChurch/4.jpg" alt="New Church rendering four">
             </div>
 
+            <div class="slide">
+                <img src="../images/newChurch/5.jpg" alt="New Church rendering five">
+            </div>
+
+            <div class="slide">
+                <img src="../images/newChurch/6.jpg" alt="New Church rendering six">
+            </div>
+
             <button class="slide-arrow next" aria-label="Next image">›</button>
 
             <div class="slide-dots">
                 <button class="dot active"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
                 <button class="dot"></button>
                 <button class="dot"></button>
                 <button class="dot"></button>
@@ -273,7 +285,7 @@
 
         /* FUNDRAISING LOGO FILL */
         gsap.to(".logo-progress", {
-            y: -360,
+            y: -420,
             duration: 2.2,
             ease: "power3.out",
             scrollTrigger: {
@@ -307,12 +319,12 @@
 
         function showSlide(index) {
             slides[currentSlide].classList.remove("active");
-            dots[currentSlide].classList.remove("active");
+            dots[currentSlide]?.classList.remove("active");
 
             currentSlide = (index + slides.length) % slides.length;
 
             slides[currentSlide].classList.add("active");
-            dots[currentSlide].classList.add("active");
+            dots[currentSlide]?.classList.add("active");
 
             gsap.fromTo(
                 slides[currentSlide].querySelector("img"),
