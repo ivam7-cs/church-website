@@ -1,0 +1,211 @@
+:root {
+    --darkgreen: #4B5021;
+    --gold: #CCA653;
+    --background: #F6ECDC;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 68px;
+    background: var(--darkgreen);
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.nav-logo-img {
+    height: 44px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1) sepia(0.15);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.8rem;
+}
+
+.navbar a {
+    color: var(--background);
+    text-decoration: none;
+    font-family: "Noto Serif", serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--gold);
+}
+
+.standard-footer {
+    background: var(--darkgreen);
+}
+
+.standard-footer .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 70px 100px 50px;
+}
+
+.standard-footer .footer-sentence {
+    color: var(--background);
+    font-family: "Noto Serif", serif;
+    opacity: 0.85;
+    max-width: 460px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 1.25px;
+}
+
+.standard-footer .footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.standard-footer .social-link {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(204, 166, 83, 0.35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(246, 236, 220, 0.6);
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.standard-footer .social-link:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(204, 166, 83, 0.1);
+}
+
+.standard-footer .social-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+.standard-footer .footer-bottom {
+    padding: 28px 100px;
+}
+
+.standard-footer .footer-address {
+    color: var(--background);
+    font-family: "Noto Serif", serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.standard-footer.footer-light {
+    background: var(--background);
+}
+
+.standard-footer.footer-light .footer-sentence,
+.standard-footer.footer-light .footer-address {
+    color: var(--darkgreen);
+}
+
+.standard-footer.footer-light .social-link {
+    border-color: rgba(75, 80, 33, 0.35);
+    color: var(--darkgreen);
+}
+
+.standard-footer.footer-light .social-link:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(204, 166, 83, 0.12);
+}
+
+.back-to-top {
+    position: fixed;
+    right: 34px;
+    bottom: 34px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--darkgreen);
+    border: 1px solid rgba(204, 166, 83, 0.45);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    background: var(--gold);
+    color: var(--darkgreen);
+    border-color: var(--gold);
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .standard-footer .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+        padding: 60px 7vw 40px;
+    }
+
+    .standard-footer .footer-bottom {
+        padding: 24px 7vw;
+    }
+
+    .standard-footer .footer-address {
+        text-align: left;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        height: auto;
+        min-height: 112px;
+        flex-direction: column;
+        padding: 0.8rem 1rem;
+        gap: 0.6rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

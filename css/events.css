@@ -21,52 +21,6 @@ body {
     overflow-x: hidden;
 }
 
-/* NAV */
-
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: var(--darkgreen);
-    padding: 0 3rem;
-    height: 68px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-}
-
-.nav-logo-img {
-    height: 44px;
-    width: auto;
-    filter: brightness(0) invert(1) sepia(0.15);
-}
-
-.nav-links {
-    display: flex;
-    gap: 2.8rem;
-}
-
-.navbar a {
-    color: var(--background);
-    text-decoration: none;
-    font-family: 'Noto Serif', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    transition: color 0.25s;
-}
-
-.navbar a:hover {
-    color: var(--gold);
-}
-
-.navbar a.active {
-    color: var(--gold);
-}
-
 /* HERO */
 
 .hero {
@@ -296,77 +250,9 @@ body {
     right: 22px;
 }
 
-/* FOOTER */
-
-footer {
-    background: var(--background);
-    color: var(--darkgreen);
-    padding: 70px 8vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.footer-socials {
-    display: flex;
-    gap: 16px;
-}
-
-.footer-socials a {
-    color: var(--gold);
-    text-decoration: none;
-    font-weight: 700;
-}
-
-footer p {
-    text-align: right;
-    font-size: 18px;
-    line-height: 1.4;
-}
-
-/* BACK TO TOP */
-
-.back-to-top {
-    position: fixed;
-    right: 34px;
-    bottom: 34px;
-    width: 46px;
-    height: 46px;
-    background: var(--darkgreen);
-    color: var(--gold);
-    border: 1px solid rgba(204, 166, 83, 0.45);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(12px);
-    transition: 0.3s ease;
-    z-index: 900;
-}
-
-.back-to-top.visible {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
-    .navbar {
-        padding: 0 1rem;
-    }
-
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .nav-links a {
-        font-size: 9px;
-    }
-
     .event-section {
         grid-template-columns: 1fr;
         padding: 90px 6vw;
@@ -379,15 +265,5 @@ footer p {
 
     .event-date {
         margin-left: 0;
-    }
-
-    footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
-    }
-
-    footer p {
-        text-align: left;
     }
 }
