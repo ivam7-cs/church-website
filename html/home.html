@@ -126,6 +126,10 @@
                         </svg>
                     </a>
                 </div>
+                <div class="footer-contact">
+                    <a href="mailto:stgeorgeracine@gmail.com">stgeorgeracine@gmail.com</a>
+                    <a href="tel:+12625547998">262-554-7998</a>
+                </div>
             </div>
         </div>
 
@@ -137,7 +141,9 @@
         </div>
 
         <div class="footer-bottom">
-            <p id="address">6108 Braun Rd &nbsp;·&nbsp; Mount Pleasant &nbsp;·&nbsp; WI 53403</p>
+            <p id="address">
+                6108 Braun Rd &nbsp;&middot;&nbsp; Mount Pleasant &nbsp;&middot;&nbsp; WI 53403
+            </p>
         </div>
     </footer>
 
@@ -167,7 +173,7 @@
 
         /* ── NAVBAR SLIDE IN ── */
         gsap.to(".navbar", {
-            y: 80,
+            y: window.matchMedia("(max-width: 600px)").matches ? 112 : 80,
             scrollTrigger: { trigger: "#section-2", start: "top 80%", toggleActions: "play none none reverse" }
         });
 

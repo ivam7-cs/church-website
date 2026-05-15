@@ -229,6 +229,11 @@ body {
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
+    .hero {
+        margin-top: 112px;
+        height: 72vh;
+    }
+
     .hero-content {
         padding: 0 2rem 90px;
     }
@@ -239,44 +244,101 @@ body {
     }
 
     .story {
-        display: block;
-        min-height: auto;
+        display: grid;
+        grid-template-columns: minmax(0, 52%) minmax(0, 48%);
+        min-height: 360vh;
     }
 
     .story-text {
-        padding: 4rem 1.5rem;
+        padding: 0 0 0 5vw;
     }
 
     .story-visual {
-        position: relative;
-        top: auto;
-        height: auto;
-        padding: 1.5rem;
+        position: sticky;
+        top: 112px;
+        height: calc(100vh - 112px);
+        padding: 24px 5vw 24px 2vw;
     }
 
     .image-frame {
-        height: 65vh;
+        height: min(58vh, 430px);
+        border-radius: 20px;
     }
 
     .chapter {
-        min-height: auto;
-        margin-bottom: 5rem;
-        opacity: 1;
-        transform: none;
+        min-height: calc(100vh - 112px);
+        margin-bottom: 0;
+        padding-left: 1.2rem;
+    }
+
+    .chapter h2 {
+        font-size: clamp(36px, 9vw, 56px);
+    }
+
+    .chapter p {
+        font-size: clamp(15px, 2.5vw, 18px);
+        line-height: 1.65;
     }
 }
 
 @media (max-width: 600px) {
-    .hero {
-        margin-top: 112px;
+    .story {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .story-visual {
+        order: 1;
+        position: sticky;
+        top: 112px;
+        z-index: 5;
+        height: auto;
+        padding: 16px 6vw 12px;
+        background: var(--cream);
+    }
+
+    .story-text {
+        order: 2;
+        padding: 0 6vw 4rem;
     }
 
     .hero h1 {
-        font-size: 76px;
+        font-size: clamp(58px, 20vw, 76px);
+    }
+
+    .hero-content {
+        padding: 0 6vw 64px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .chapter {
+        min-height: 62vh;
+        padding-left: 0.9rem;
+    }
+
+    .chapter h2 {
+        font-size: clamp(30px, 10vw, 42px);
+        margin-bottom: 1rem;
+    }
+
+    .chapter-number {
+        font-size: 10px;
+        letter-spacing: 0.22em;
+    }
+
+    .chapter p {
+        font-size: 14px;
+        line-height: 1.55;
     }
 
     .image-frame {
-        height: 52vh;
-        border-radius: 20px;
+        width: 100%;
+        height: 44vh;
+        border-radius: 16px;
+        box-shadow: 0 20px 55px rgba(47, 50, 21, 0.24);
     }
 }
