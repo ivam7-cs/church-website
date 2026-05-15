@@ -24,7 +24,7 @@ body {
     overflow-x: hidden;
 }
 
-/* FIXED PARALLAX BG */
+/* PARALLAX BACKGROUND */
 
 .page-bg {
     position: fixed;
@@ -392,69 +392,6 @@ body {
     margin-bottom: 90px;
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-    .hero {
-        height: 92vh;
-    }
-
-    .hero-content {
-        left: 7vw;
-        right: 7vw;
-        bottom: 12vh;
-    }
-
-    .hero h1 {
-        font-size: clamp(56px, 16vw, 98px);
-    }
-
-    .hero p {
-        font-size: 19px;
-    }
-
-    .intro,
-    .mission,
-    .donation {
-        padding: 90px 7vw;
-    }
-
-    .intro h2 {
-        margin-bottom: 56px;
-    }
-
-    .intro-grid,
-    .mission,
-    .donation {
-        grid-template-columns: 1fr;
-    }
-
-    .mission {
-        gap: 45px;
-    }
-
-    .mission-img {
-        height: 360px;
-        order: 2;
-    }
-
-    .mission-text {
-        order: 1;
-    }
-
-    .goal-card {
-        min-height: 400px;
-    }
-
-    .project {
-        padding: 70px 7vw 110px;
-    }
-
-    .project h2 {
-        margin-bottom: 54px;
-    }
-}
-
 /* SLIDESHOW */
 
 .slideshow {
@@ -599,7 +536,70 @@ body {
     stroke: var(--gold);
 }
 
-@media (max-width: 700px) {
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .hero {
+        height: 92vh;
+    }
+
+    .hero-content {
+        left: 7vw;
+        right: 7vw;
+        bottom: 12vh;
+    }
+
+    .hero h1 {
+        font-size: clamp(56px, 16vw, 98px);
+    }
+
+    .hero p {
+        font-size: 19px;
+    }
+
+    .intro,
+    .mission,
+    .donation {
+        padding: 90px 7vw;
+    }
+
+    .intro h2 {
+        margin-bottom: 56px;
+    }
+
+    .intro-grid,
+    .mission,
+    .donation {
+        grid-template-columns: 1fr;
+    }
+
+    .mission {
+        gap: 45px;
+    }
+
+    .mission-img {
+        height: 360px;
+        order: 2;
+    }
+
+    .mission-text {
+        order: 1;
+    }
+
+    .goal-card {
+        min-height: 400px;
+    }
+
+    .project {
+        padding: 70px 7vw 110px;
+    }
+
+    .project h2 {
+        margin-bottom: 54px;
+    }
+}
+
+@media (max-width: 600px) {
     .hero {
         min-height: 680px;
         height: calc(100vh - 112px);

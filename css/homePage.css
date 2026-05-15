@@ -41,7 +41,7 @@
         }
 
         .navbar a {
-            color: #F6ECDC;
+            color: var(--background);
             text-decoration: none;
             font-family: 'Noto Serif', serif;
             font-size: 11px;
@@ -61,7 +61,6 @@
             filter: brightness(0) invert(1) sepia(0.15);
         }
 
-        /* ── BACKGROUND PARALLAX IMAGE ── */
         /* ── HERO ── */
         .hero {
             height: 112vh;
@@ -173,7 +172,7 @@
         }
 
         #welcome {
-            color: #4B5021;
+            color: var(--darkgreen);
             font-family: 'Kings', cursive;
             font-size: 65px;
             font-weight: 400;
@@ -191,7 +190,7 @@
         }
 
         #paragraph {
-            color: #4B5021;
+            color: var(--darkgreen);
             font-family: 'Noto Serif', serif;
             font-size: 25px;
             line-height: 1.75;
@@ -318,7 +317,7 @@
 
         /* ── SECTION 3 — SUNDAY SERVICES ── */
         #section-3 {
-            background: #4B5021;
+            background: var(--darkgreen);
             padding: 0;
         }
 
@@ -483,7 +482,7 @@
 
         /* ── FOOTER ── */
         footer {
-            background: #4B5021;
+            background: var(--darkgreen);
         }
 
         .footer-top {
